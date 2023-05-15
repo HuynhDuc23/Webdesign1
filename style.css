@@ -1,0 +1,116 @@
+html {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.work {
+  max-width: 1000px;
+  padding: 2rem 2rem;
+  margin: 0 auto;
+}
+.work__heading {
+  font-size: 20px;
+  font-weight: 500;
+  color: black;
+  text-transform: capitalize;
+  padding-bottom: 0.5rem;
+  margin-bottom: 10px;
+  position: relative;
+}
+.work__heading:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 2.5rem;
+  height: 5px;
+  background-color: green;
+  border-radius: 4px;
+}
+.work__filter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.work__tab {
+  display: flex;
+  opacity: 1;
+}
+.work__items {
+  cursor: pointer;
+  padding: 5px 5px;
+  border: 1px solid green;
+  border-radius: 10px 0 10px 10px;
+  text-align: center;
+  transition: all 0.2 ease;
+}
+.work__items:hover {
+  color: white;
+  background-color: green;
+  opacity: 0.8;
+}
+.work__items:not(:first-child) {
+  margin-left: 8px;
+}
+.work__all {
+  display: inline-block;
+  padding: 5px 4px;
+  color: green;
+  background-color: rgba(0, 128, 0, 0.3);
+  border-radius: 5px;
+  text-decoration: none;
+}
+.work__list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -1.5rem;
+}
+.work__itemss {
+  width: calc(25% - 1.5rem);
+  margin-left: 1.5rem;
+  border-radius: 6px;
+  overflow: hidden;
+  opacity: 1;
+}
+.work__itemss:hover {
+  cursor: pointer;
+  opacity: 0.5;
+}
+.work__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+@media screen and (max-width: 1023px) {
+  .work__itemss {
+    width: calc(50% - 1.5rem);
+    margin-bottom: 1.5rem;
+  }
+}
+@media screen and (max-width: 767px) {
+  .work__itemss {
+    width: 100%;
+    margin-bottom: 1.5rem;
+  }
+  .work__filter {
+    flex-direction: column;
+  }
+  .work__tab {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .work__items {
+    margin-bottom: 1rem;
+  }
+}
+@media screen and (max-width: 1279) and (min-width: 1204) {
+  .work {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

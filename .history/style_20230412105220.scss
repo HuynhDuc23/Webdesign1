@@ -1,0 +1,134 @@
+$green-color : green ;
+@mixin size ($width , $height : $width)
+{
+    width : $width ;
+    height: $height;
+}
+html {
+   box-sizing: border-box;
+   padding: 0;
+   margin: 0;
+}
+.work {
+    max-width: 1000px;
+    padding: 2rem 2rem;
+    margin: 0 auto;
+    &__heading {
+        font-size: 20px;
+        font-weight: 500;
+        color : black; 
+        text-transform: capitalize;
+        padding-bottom: 0.5rem;
+        margin-bottom: 10px;
+        // border-bottom: 4px solid green ;
+        // display: inline-block;
+        position: relative;
+        &:before {
+            content: "";
+            position: absolute;
+            bottom : 0 ;
+            left: 0 ;
+            @include size(2.5rem , 5px);
+            background-color: green;
+            border-radius: 4px;
+        }
+       
+    }
+    &__filter{
+        display: flex ;
+        // ap dung cho then con truc tiep , khoi
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 10px;
+
+    }
+    &__tab {
+        display: flex;
+        opacity: 1;
+    }
+    &__items {
+        cursor: pointer;
+        padding: 5px 5px;
+        border: 1px solid  $green-color;
+        border-radius: 10px 0 10px 10px;
+        text-align: center;
+        transition: all 0.2 ease;
+        &:hover {
+            color: white;
+            background-color: $green-color;
+            opacity: 0.8;
+        }
+        &:not(:first-child)
+        {
+            margin-left: 8px;
+        }
+    }
+    &__all {
+        display: inline-block;
+        padding: 5px 4px;
+        color: $green-color;
+        background-color: rgba($green-color, $alpha: 0.3);
+        border-radius: 5px;
+        text-decoration: none;
+      
+    }
+    &__list {
+        display: flex;
+        // mac dinh la flex-no wrap
+        flex-wrap: wrap;
+        margin-left: -1.5rem;
+    }
+    &__itemss {
+        width: calc(25% - 1.5rem);
+        margin-left: 1.5rem;
+        border-radius: 6px;
+        // dung khi anh bi tran , khong boderradius dc
+        overflow: hidden;
+        opacity: 1;
+        &:hover {
+            cursor: pointer;
+            opacity: 0.5;
+        }
+    }
+    &__image {
+        @include size(100%) ;
+        object-fit: cover;
+        object-position: top;
+    }
+}
+@media screen and (max-width : 1023px){
+    .work {
+        &__itemss {
+            width : calc(50% - 1.5rem) ;
+            margin-bottom: 1.5rem;
+        }
+    }
+}
+@media screen and (max-width : 767px)
+{
+    .work {
+        &__itemss {
+            width: 100%;
+            margin-bottom: 1.5rem ;
+        }
+        &__filter {
+            flex-direction: column;
+        }
+        &__tab {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        &__items {
+            margin-bottom: 1rem;
+        }
+    }
+}
+// mobile first : 320 480 768 1024 1280 1366 1440 1600 1920
+// code with mobile first use min-width 
+// code with destop first use max-width
+// min 1024 --> >= 1024 
+// max 1023 --> <= 1023 
+// if 1024 with max , == min => use min and width
+@media screen and (max-width : 1023px){}
+@media screen and (min-width : 1024px){}
+

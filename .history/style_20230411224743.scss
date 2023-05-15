@@ -1,0 +1,17 @@
+html {
+   box-sizing: border-box;
+   padding: 0;
+   margin: 0;
+}
+.work {
+    max-width: 1000px;
+    padding: 2rem 2rem;
+    margin: 0 auto;
+    &__heading {
+        font-size: 20px;
+        font-weight: bold;
+        color : black; 
+        padding-bottom: 2rem;
+        border-bottom: 4px solid green ;
+    }
+}

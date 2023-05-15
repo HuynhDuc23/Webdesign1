@@ -1,0 +1,38 @@
+@mixin size ($width , $height : $width)
+{
+    width : $width ;
+    height: $height;
+}
+html {
+   box-sizing: border-box;
+   padding: 0;
+   margin: 0;
+}
+.work {
+    max-width: 1000px;
+    padding: 2rem 2rem;
+    margin: 0 auto;
+    &__heading {
+        font-size: 20px;
+        font-weight: bold;
+        color : black; 
+        padding-bottom: 0.5rem;
+        margin-bottom: 10px;
+        // border-bottom: 4px solid green ;
+        // display: inline-block;
+        position: relative;
+        &:before {
+            content: "";
+            position: absolute;
+            bottom : 0 ;
+            left: 0 ;
+            @include size(3.5rem , 5px);
+            background-color: green;
+            border-radius: 4px;
+        }
+        &__filter{
+            display: flex;
+            justify-content: center;
+        }
+    }
+}
